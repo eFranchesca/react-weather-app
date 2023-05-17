@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
+      <h1>
+          Hello World 😎👋🏼
+      </h1>
+       
       </header>
+
+      <footer>
+        This project is coded by {" "}
+        <a href="https://resonant-kitsune-68394b.netlify.app" target="_blank" rel="noopener noreferrer">Eva Godfrey</a>
+        {" "}and is open-sourced on 
+        <a href="https://github.com/eFranchesca/weather-react" target="_blank" rel="noopener noreferrer"> Github </a>
+      </footer>
+
+
     </div>
   );
 }
