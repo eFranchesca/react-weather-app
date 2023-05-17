@@ -4,4 +4,14 @@
 
 footer {
   margin-top: 20px;
+ }
+
+a {
+  text-decoration: none;
+  color: rgb(34, 175, 34);
+  font-weight: 650;
+}
+
+a:hover {
+  color: darkgreen;
 }
