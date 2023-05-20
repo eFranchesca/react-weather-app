@@ -1,10 +1,18 @@
+.App {
+  font-family: 'Poppins', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  }
+
 .App-header {
   text-align: center;
 }
 
 footer {
-  margin-top: 20px;
+  font-size: 13px;
+  margin-top: 15px;
   text-align: center;
+  color: rgb(114, 114, 114);
  }
 
 a {
