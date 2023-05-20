@@ -1,9 +1,10 @@
-.App {
+.App-header {
   text-align: center;
 }
 
 footer {
   margin-top: 20px;
+  text-align: center;
  }
 
 a {
