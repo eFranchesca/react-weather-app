@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  const apiKey = "ce144f0cf51fa43f03431f0488a36728";
-  let city = "Miami";
-  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
+  const [ready, setReady] = useState(false);
+  const [temperature, setTemperature] = useState(null);
+  function handleResponse(response) {
+    console.log(response.data);
+    setTemperature(response.data.main.temp);
+    setReady(true);
+  }
+  if (ready) {
   return (
     <div className="weather">
       <form>
@@ -22,14 +27,23 @@ export default function Weather() {
             </div>
         </div>
       </form>
-      <h1>Miami</h1>
+      <h1>{city}</h1>
       <ul>
         <li>Saturday 4:20</li>
         <li>Cloudy</li>
       </ul>
       <div className="row">
         <div className="col-6">
-        <li className="icon_temp">☁️ 87°F</li>
+          <div className="clearfix">
+        <img 
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="Mostly Cloudy"
+          className="float-left"/>
+        <div className="float-left">
+          <span className="temperature">{Math.round(temperature)}</span>
+          <span className="unit">°c</span>
+        </div>
+          </div>
         </div>
         <div className="col-6">
           <ul>
@@ -41,4 +55,12 @@ export default function Weather() {
       </div>
     </div>
   )
+  } else {
+    const apiKey = "ce144f0cf51fa43f03431f0488a36728";
+    let city = "London";
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}&units=metric";
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
+  }
 }
